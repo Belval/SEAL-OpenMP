@@ -3,6 +3,8 @@
 
 #include "examples.h"
 
+#include <chrono>
+
 using namespace std;
 using namespace seal;
 
@@ -62,6 +64,7 @@ int main()
             }
         } while (!invalid);
 
+        auto start = std::chrono::high_resolution_clock::now();
         switch (selection)
         {
         case 1:
@@ -91,6 +94,8 @@ int main()
         case 0:
             return 0;
         }
+        std::chrono::duration<double> elapsed = std::chrono::high_resolution_clock::now() - start;
+        std::cout << "Elapsed time: " << elapsed.count() << " s\n";
     }
 
     return 0;

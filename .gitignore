@@ -3,6 +3,7 @@ native/src/cmake/SEALConfig.cmake
 native/src/cmake/SEALConfigVersion.cmake
 native/src/cmake/SEALTargets.cmake
 native/src/seal/util/config.h
+native/src/build/*
 **/CMakeCache.txt
 **/CMakeFiles
 **/Makefile

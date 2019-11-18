@@ -177,6 +177,7 @@ namespace seal
             sample_poly_ternary(rng, parms, u.get());
 
             // c[j] = u * public_key[j]
+            #pragma omp parallel for
             for (size_t i = 0; i < coeff_mod_count; i++)
             {
                 ntt_negacyclic_harvey(
@@ -203,6 +204,7 @@ namespace seal
 
             // Generate e_j <-- chi.
             // c[j] = public_key[j] * u + e[j]
+            #pragma omp parallel for
             for (size_t j = 0; j < encrypted_size; j++)
             {
                 sample_poly_normal(rng, parms, u.get());

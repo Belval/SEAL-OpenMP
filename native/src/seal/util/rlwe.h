@@ -4,6 +4,7 @@
 #pragma once
 
 #include <cstdint>
+#include <omp.h>
 #include "seal/randomgen.h"
 #include "seal/encryptionparams.h"
 #include "seal/publickey.h"

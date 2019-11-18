@@ -384,6 +384,12 @@ find_package(Threads REQUIRED)
 # Link Threads with seal
 target_link_libraries(seal PUBLIC Threads::Threads)
 
+# Require OpenMP library
+find_package(OpenMP REQUIRED)
+
+# Link OpenMP with seal
+target_link_libraries(seal PRIVATE OpenMP::OpenMP_CXX)
+
 if(SEAL_USE_MSGSL)
     # Link MSGSL with seal
     target_link_libraries(seal PUBLIC MSGSL::MSGSL)
